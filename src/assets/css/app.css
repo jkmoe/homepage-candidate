@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+        --document-background-color: theme(colors.white);
+
+        --content-width: 1200px;
+
+        --header-tail-height: 8vw;
+        --header-tail-max-height: 200px;
+
+		--header-animation-delay: .1s;
+		--header-animation-duration: 0.3s;
+        --main-animation-delay: calc(var(--header-animation-delay) + var(--header-animation-duration));
+        --main-animation-duration: 1s;
+	}
+
+    body {
+        color: theme(colors.gray.800)
+    }
+
+    h2 {
+        font-weight: 500;
+        color: theme(colors.emerald.600)
+    }
+
+    a {
+        color: theme(colors.sky.600)
+    }
+
+    a:hover, a:focus {
+        text-decoration: underline;
+    }
+}
+
+@layer components {
+    .content-grid {
+        @apply grid;
+        @apply grid-cols-2;
+        @apply gap-y-2;
+        @apply p-2;
+        @apply border;
+        @apply bg-white/90;
+    }
+}
+
+@layer utilities {
+    .content-width {
+        width: var(--content-width);
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .gradient {
+        background: radial-gradient(
+            circle at 250% 25%,
+            theme(colors.emerald.800) 0%,
+            theme(colors.emerald.600) 50%,
+            theme(colors.emerald.500) 50%,
+            theme(colors.emerald.800) 100%
+        );
+    }
+}
