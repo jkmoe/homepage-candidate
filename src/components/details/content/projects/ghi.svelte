@@ -24,7 +24,7 @@
 
     <div class="italic">Repository</div>
     <div>
-        <a href="https://github.com/jkmoe/ghi" title="See the project on GitHub">
+        <a href="https://github.com/jkmoe/ghi" title="See the project on GitHub" target="_blank">
             <img {src} alt="GitHub" width="20" height="20">
         </a>
     </div>

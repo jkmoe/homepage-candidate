@@ -14,6 +14,9 @@
 	let currentSlide = 0
 	const components = [Homepage, Ghi, Employ, Mtg]
 
+	$: isFirstSlideActive = currentSlide === 0
+	$: isLastSlideActive = currentSlide === components.length - 1
+
 	function previousSlide() {
 		currentSlide = Math.max(0, currentSlide - 1)
 
@@ -31,21 +34,29 @@
 	<article class="relative">
 		<div class="flex flex-row justify-between bg-white/90 p-2 mb-5 border">
 			<h2>Projects</h2>
-			<nav>
+			<nav class="select-none">
 				<span
 					class="font-medium"
-					class:cursor-pointer={currentSlide !== 0}
-					class:pointer-events-none={currentSlide === 0}
-					class:opacity-20={currentSlide === 0}
+					class:cursor-pointer={!isFirstSlideActive}
+					class:pointer-events-none={isFirstSlideActive}
+					class:opacity-20={isFirstSlideActive}
 					on:click={previousSlide}
+					on:keypress={previousSlide}
+					role="button"
+					tabindex="0"
+					aria-disabled={isFirstSlideActive}
 				>Prev</span>
 				<span class="text-emerald-600"> | </span>
 				<span
 					class="font-medium"
-					class:cursor-pointer={currentSlide !== components.length - 1}
-					class:pointer-events-none={currentSlide === components.length - 1}
-					class:opacity-20={currentSlide === components.length - 1}
+					class:cursor-pointer={!isLastSlideActive}
+					class:pointer-events-none={isLastSlideActive}
+					class:opacity-20={isLastSlideActive}
 					on:click={nextSlide}
+					on:keypress={nextSlide}
+					role="button"
+					tabindex="0"
+					aria-disabled={isLastSlideActive}
 				>Next</span>
 			</nav>
 		</div>

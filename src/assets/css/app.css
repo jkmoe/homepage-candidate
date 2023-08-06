@@ -37,12 +37,7 @@
 
 @layer components {
     .content-grid {
-        @apply grid;
-        @apply grid-cols-2;
-        @apply gap-y-2;
-        @apply p-2;
-        @apply border;
-        @apply bg-white/90;
+        @apply grid grid-cols-2 gap-y-2 p-2 border bg-white/90;
     }
 }
 
