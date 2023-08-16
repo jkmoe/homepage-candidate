@@ -17,9 +17,9 @@
     }
 </script>
 
-<ul class="flex flex-row">
+<ul class="flex flex-row pt-2 md:pt-0">
     {#each configSocialMedia.logos as logo, index (logo.id)}
-        <li class="w-5 h-5 flex flex-col justify-center" class:ml-3={index > 0}>
+        <li class="w-8 md:w-5 h-8 md:h-5 flex flex-col justify-center" class:md:ml-3={index > 0} class:ml-5={index > 0}>
             <svelte:component this={logos[logo.id]} {logo}/>
         </li>
     {/each}

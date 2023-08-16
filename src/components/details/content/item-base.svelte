@@ -31,8 +31,15 @@
 		min-width: 300px;
 		min-height: 300px;
         padding-top: 80px;
-        padding-left: 140px;
+        padding-left: 20px;
 	}
+
+    @screen mdp {
+        .item-details {
+            padding-top: 80px;
+            padding-left: 140px;
+        }
+    } 
 
 	.item-details__img-wrapper {
 		width: 200px;
